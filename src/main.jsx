@@ -1,4 +1,5 @@
-import React, { Children } from 'react'
+import React from 'react'
+import Map from './routes/map'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
@@ -12,12 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    children: [
-      {
-        path: "/map",
-        element: <Root />,
-      },
-    ],
+  },
+  {
+    path: "/map",
+    element: <Map />,
   },
   
 ]);

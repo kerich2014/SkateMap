@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 export default function Root() {
     return (
@@ -8,7 +8,7 @@ export default function Root() {
         <div className='absolute top-[2%] right-[2%] border-2 h-12 w-12 border-gray-800 rounded-full m-auto'></div>
       </div>
         <nav className="flex items-center m-[2%]">
-            <a>Карта спотов</a>
+            <a><Link to = {`/map`}>Карта спотов</Link></a>
             <a>Школа трюков</a>
             <a>Блог</a>
             <a>Правила скейтпарков</a>
