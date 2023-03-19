@@ -1,5 +1,5 @@
 import React from "react";
-import { YMaps, Map, Placemark, Rectangle } from "react-yandex-maps";
+import { YMaps, Map, Placemark} from "@pbe/react-yandex-maps";
 
 const mapStyle = {
   position: "relative",
@@ -10,7 +10,7 @@ const mapStyle = {
   overflow: "hidden",
 };
 
-export const Yandex = ({ center }) => {
+export const Yandex = ({center}) => {
   return (
     <YMaps
       query={{ apikey: "1a15248c-004a-4364-8c06-4c1e617f3000", lang: "RU" }}
@@ -20,7 +20,7 @@ export const Yandex = ({ center }) => {
         style={mapStyle}
         defaultState={{ center: center || [59.939098, 30.315868], zoom: 10 }}
         >
-            <Placemark geometry = {[59.907857, 30.298757]} />
+            <Placemark geometry = {[59.836172, 30.164347]}/>
         </Map>
       </div>
     </YMaps>
