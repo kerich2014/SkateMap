@@ -6,15 +6,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
-a{
+.a{
   margin: auto;
   border-radius: 1rem;
   text-align: center;
   cursor: pointer;
   width: 25%;
   height: auto;
+  font-size: large;
 }
 
-a:hover{
+.a:hover{
   background-color: gray;
 }
