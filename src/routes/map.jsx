@@ -1,8 +1,29 @@
 import React from "react";
-import { Yandex } from "../components/YaMap";
+import { YaMap } from "../components/YaMap";
 import { Link } from "react-router-dom";
 
 export default function Map() {
+
+  const points = [
+    {
+      id: '1',
+      coordinates: [59.836172, 30.164347],
+      title: 'Скейт-парк у речки',
+      description: 'Скейтпарк от компании FK-Ramps. Год постройки: 2023',
+      photo: 'https://cdnstatic.rg.ru/uploads/images/2022/08/29/1_dji_0143_402.jpg'
+    },
+    {
+      id: "2",
+      coordinates: [61.699623, 30.690952],
+      title: "Пристань Метеоров"
+    },
+    {
+      id: "3",
+      coordinates: [61.705707, 30.672616],
+      title: "Парк Ваккасалми"
+    }
+  ];
+
     return (
       <>
         <div className="flex flex-grow">
@@ -16,7 +37,7 @@ export default function Map() {
             <a className="a">Правила скейтпарков</a>
         </nav>
         <div className="w-[96%] m-auto">
-          <Yandex/>
+          <YaMap points={points}/>
         </div>
       </>
     );
