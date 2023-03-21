@@ -6,15 +6,29 @@
   font-family: 'Roboto', sans-serif;
 }
 
-button{
+
+.addSpot{
   margin: 5px;
   border-radius: 1rem;
-  line-height: 40px;
+  line-height: 30px;
   text-align: center;
   cursor: pointer;
   height: 40px;
   font-size: large;
+  padding: 5px;
+  opacity: 0;
+  animation: ani 1.5s forwards;
+}
+
+.addSpot:hover{
   border: 1px solid;
+  line-height: 28px;
+  padding: 4px;
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .a{

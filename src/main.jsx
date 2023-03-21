@@ -18,7 +18,6 @@ const router = createBrowserRouter([
     path: "/map",
     element: <Map />,
   },
-  
 ]);
 
 export default router;

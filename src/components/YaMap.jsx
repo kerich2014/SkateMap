@@ -1,5 +1,5 @@
 import React from "react";
-import { YMaps, Map, Placemark, Button, GeolocationControl, ObjectManager} from "@pbe/react-yandex-maps";
+import { YMaps, Map, ObjectManager} from "@pbe/react-yandex-maps";
 
 export const YaMap = ({points}) => {
 
@@ -51,14 +51,6 @@ export const YaMap = ({points}) => {
           style={mapStyle}
           defaultState={{ center: [59.939098, 30.315868], zoom: 10 }}
         >
-          <Button
-            options={{ maxWidth: 128 }}
-            data={{ content: "Добавить спот" }}
-            defaultState={{ selected: true }}
-          />
-
-          <GeolocationControl options={{ float: "left" }} />
-
           <ObjectManager 
             defaultFeatures={collection}
             modules={[

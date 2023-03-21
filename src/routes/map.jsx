@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { YaMap } from "../components/YaMap";
 import { Link } from "react-router-dom";
+import Modal from "../components/modal/Modal";
 
 export default function Map() {
+
+  const [modalActive, setModalActive] = useState(false)
 
   const points = [
     {
@@ -37,8 +40,25 @@ export default function Map() {
             <a className="a">Правила скейтпарков</a>
         </nav>
         <div className="w-[96%] m-auto">
+          <button className='addSpot' onClick={() => setModalActive(true)}>Добавить спот</button>
           <YaMap points={points}/>
         </div>
+        <Modal active={modalActive} setActive={setModalActive}>
+          <div className="flex flex-col items-center">
+            <h1 className="text-3xl">Заполните форму</h1>
+            <h2 className="text-xl mt-[5%]">Введите вашу почту:</h2>
+            <input className="border-2 border-gray-800 rounded-md p-1 mt-[3%] w-2/3" type={Text}></input>
+            <h2 className="text-xl mt-[3%]">Введите название спота:</h2>
+            <input className="border-2 border-gray-800 rounded-md p-1 mt-[3%] w-2/3" type={Text}></input>
+            <h2 className="text-xl mt-[3%]">Введите описание спота:</h2>
+            <textarea className="border-2 border-gray-800 rounded-md p-1 mt-[3%] w-2/3 h-52 resize-none"></textarea>
+            <h2 className="text-xl mt-[3%]">Добавьте фото:</h2>
+            <input type='file' className="p-1 mt-[3%] w-2/3"></input>
+            <button 
+              className="border-2 border-gray-800 flex items-center justify-center rounded-md p-1 mt-[3%] w-1/3"
+              onClick={() => setModalActive(false)}>Отправить</button>
+          </div>
+        </Modal>
       </>
     );
   }
