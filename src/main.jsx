@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import Root from './routes/root'
+import School from './routes/school'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
     path: "/map",
     element: <Map />,
   },
+  {
+    path: "/school",
+    element: <School />,
+  },
+
 ]);
 
 export default router;
