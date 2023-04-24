@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import Root from './routes/root'
 import School from './routes/school'
+import Profile from './routes/profile'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/school",
     element: <School />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />
   },
 
 ]);

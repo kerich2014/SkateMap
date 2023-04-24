@@ -4,7 +4,7 @@ import { YMaps, Map, ObjectManager} from "@pbe/react-yandex-maps";
 export const YaMap = ({points}) => {
 
   const [aItem, setAitem] = React.useState(points);
-
+  
   const mapStyle = {
     position: "relative",
     left: 0,

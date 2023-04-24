@@ -7,6 +7,7 @@ import MapForm from "../components/MapForForm";
 export default function Map() {
 
   const [modalActive, setModalActive] = useState(false)
+  const [inputMail, setInputMail] = useState('')
 
   const points = [
     {
@@ -28,12 +29,19 @@ export default function Map() {
     },
 
   ];
+  
 
     return (
       <>
         <div className="flex flex-grow">
           <Link className="m-auto mt-[2%] text-5xl" to = {`/`}>Skate Map</Link>
-          <div className='absolute top-[2%] right-[2%] border-2 h-12 w-12 border-gray-800 rounded-full m-auto'></div>
+          <div className='absolute top-[2%] right-[2%] border-2 h-12 w-12 border-gray-800 rounded-full m-auto'>
+            <Link to = {`/profile`}>
+              <img 
+              className="h-10 rounded-full m-auto" 
+              src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Transparent-Image.png"/>
+            </Link>
+          </div>
         </div>
         <nav className="flex items-center m-[2%]">
             <Link className="a" to = {`/map`}>Карта спотов</Link>
@@ -50,19 +58,23 @@ export default function Map() {
             <div className="w-1/2 m-[5%]">
               <MapForm/>
             </div>
-            <div className="flex flex-col items-center w-1/2">
+            <div className="flex flex-col items-center w-1/2 min-h-full">
               <h1 className="text-3xl">Заполните форму</h1>
               <h2 className="text-xl mt-3">Введите вашу почту:</h2>
-              <input className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
+              <input id="inMail" value={inputMail} onChange={(event) => setInputMail(event.target.value)} className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
               <h2 className="text-xl mt-3">Введите название спота:</h2>
-              <input className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
+              <input id="inName" className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
               <h2 className="text-xl mt-3">Введите описание спота:</h2>
-              <textarea className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3 h-52 resize-none"></textarea>
+              <textarea id="taDescription" className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3 h-32 resize-none"></textarea>
               <h2 className="text-xl mt-3">Добавьте фото:</h2>
               <input type='file' className="p-1 mt-[3%] w-2/3"></input>
               <button 
                 className="border-2 border-gray-800 flex items-center justify-center rounded-md p-1 mt-[5%] w-1/3"
-                onClick={() =>{setModalActive(false); const element = document.getElementById('modal'); element.remove()}}>Отправить</button>
+                onClick={() =>{
+                  setModalActive(false);
+                  }}>
+                Отправить
+                </button>
             </div>
           </div>
         </Modal>

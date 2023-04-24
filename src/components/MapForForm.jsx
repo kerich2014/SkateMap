@@ -5,8 +5,8 @@ const mapState = {center: [59.939098, 30.315868], zoom: 10};
 const mapStyle = {
     top: 0,
     left: 0,
-    width: "600px",
-    height: "600px",
+    height: "50vh",
+    width: "30vw",
     overflow: "hidden",
   };
 
