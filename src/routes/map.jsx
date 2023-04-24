@@ -66,8 +66,7 @@ export default function Map() {
                 onClick={() =>{setModalActive(false); const element = document.getElementById('modal'); element.remove()}}>Отправить</button>
             </div>
           </div>
-        </div>
-      </Modal> */}
+      </Modal>
     </>
   );
 }
