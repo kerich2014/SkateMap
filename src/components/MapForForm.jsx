@@ -53,9 +53,9 @@ export default function MapForm() {
   };
 
   let ecoords = '';
+
   const onMapClick = (e) => {
     const coords = e.get("coords");
-
     if (placemarkRef.current) {
       placemarkRef.current.geometry.setCoordinates(coords);
     } else {
@@ -66,9 +66,11 @@ export default function MapForm() {
       });
     }
     getAddress(coords);
-    ecoords = coords
-    console.log(ecoords)
+    ecoords = coords;
+    console.log(ecoords);
+    localStorage.setItem('coords', ecoords)
   };
+
 
   return (
     <div className="">
@@ -81,12 +83,8 @@ export default function MapForm() {
           state={mapState}
           style={mapStyle}
         />
-        {address && (
-          <div>
-            <p>{ecoords}</p>
-          </div>
-        )}
       </YMaps>
+     {/* <h1 className="border-2 border-black">Coords: {localStorage.getItem('coords')}</h1> */}
     </div>
   );
 }

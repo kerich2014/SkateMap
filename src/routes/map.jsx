@@ -28,6 +28,27 @@ export default function Map() {
       title: "Парк Ваккасалми",
     },
   ];
+
+  const formData = {
+    mail: String,
+    name: String,
+    description: String,
+    photo: File,
+  }
+
+  function showMail(event) {
+    formData.mail = (event.target.value);
+  }
+  function showName(event) {
+    formData.name = (event.target.value);
+  }
+  function showDescription(event) {
+    formData.description = (event.target.value);
+  }
+  function showDescription(event) {
+    formData.description = (event.target.value);
+  }
+ 
   
 
     return (
@@ -54,16 +75,19 @@ export default function Map() {
             <div className="flex flex-col items-center w-1/2">
               <h1 className="text-3xl">Заполните форму</h1>
               <h2 className="text-xl mt-3">Введите вашу почту:</h2>
-              <input className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
+              <input id="email" onInput={showMail} className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
               <h2 className="text-xl mt-3">Введите название спота:</h2>
-              <input className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
+              <input id="spotName" onInput={showName} className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3"></input>
               <h2 className="text-xl mt-3">Введите описание спота:</h2>
-              <textarea className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3 h-52 resize-none"></textarea>
+              <textarea id="spotDesc" onInput={showDescription} className="border-2 border-gray-800 rounded-md p-1 mt-3 w-2/3 h-30 resize-none"></textarea>
               <h2 className="text-xl mt-3">Добавьте фото:</h2>
               <input type='file' className="p-1 mt-[3%] w-2/3"></input>
               <button 
                 className="border-2 border-gray-800 flex items-center justify-center rounded-md p-1 mt-[5%] w-1/3"
-                onClick={() =>{setModalActive(false); const element = document.getElementById('modal'); element.remove()}}>Отправить</button>
+                onClick={() =>{
+                  setModalActive(false);
+                  console.log(formData)
+                }}>Отправить</button>
             </div>
           </div>
       </Modal>
